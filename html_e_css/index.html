@@ -29,7 +29,8 @@
     
       <google-codelab-step label="Introduzione" duration="0">
         <p><strong>Ultimo aggiornamento:</strong> 2024-03-14 </p>
-<p>Questo è un manuale per un corso introduttivo a HTML e CSS.</p>
+<p><strong>Autore:</strong> Massimo Zancanaro</p>
+<p>Questo è il manuale per il corso introduttivo a HTML e CSS dell&#39;insegnamento <em>Informatica ed elementi di programmazione I</em> del corso di laurea triennale <em>Interfacce e Tecnologie della Comunicazione </em>dell&#39;Università di Trento. </p>
 <aside class="special"><p><strong>Nota:</strong> ci sono diversi <em>tool </em>commerciali per la creazione di siti web che permettono di creare e gestire documenti HTML e specifiche CSS in progetti anche molto complessi. Per le necessità di questo corso, è sufficiente un editor di testo qualunque ma è opportuno che abbia la possibilità di adattare la visualizzazione dei file HTML e permettere un minimo supporto all&#39;editing. Il consiglio è usare <a href="https://notepad-plus-plus.org/" target="_blank">Notepad++</a> o <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>, entrambi sono <em>open source </em>e hanno la possibilità di installare <em>plugin </em>per la gestione di file HTML. </p>
 <p>Per visualizzare un documento HTML (anche con CSS), è sufficiente aprire il file direttamente dal browser. </p>
 <p>Per fare delle prove veloci, possiamo usare anche dei tool online come ad esempio <a href="https://jsfiddle.net/" target="_blank">https://jsfiddle.net/</a> (è però importante imparare a lavorare partendo dai file di testo). Quando si usano i tool online, di solito si omettono i tag <em>html</em>, <em>head</em> e <em>body </em>e si lavora direttamente nella parte <em>body</em>. </p>
@@ -98,8 +99,9 @@
       </google-codelab-step>
     
       <google-codelab-step label="La struttura di base di un documento HTML" duration="0">
-        <p>Un documento HTML è formato da due parti strutturali: una <em>head</em> che contiene informazioni di meta-livello (come vedremo sotto in dettaglio) e un <em>body</em> che contiene il testo opportunamente annotato con altri <em>tag</em>.</p>
-<p>I documenti HTML sono <em>file </em>di testo e di solito vengono salvati con estensione <em>.html</em>. L&#39;estensione del <em>file</em> non è in genere rilevante per una corretta interpretazione del contenuto ma diversi <em>editor</em> di testo riconoscono e adattano la visualizzazione del documento partendo dall&#39;estensione. In questo modo, gli editor possono ad esempio visualizzare i tag con un colore diverso rispetto al testo da annotare, indentare in modo appropriato i <em>tag </em>e suggerire quale <em>tag </em>è il prossimo da chiudere, facilitando così la preparazione dei documenti HTML.</p>
+        <p>Un documento HTML è formato da due parti strutturali: una <em>head</em> che contiene informazioni di meta-livello (come vedremo sotto in dettaglio) e un <em>body</em> che contiene il testo opportunamente annotato con altri <em>tag </em>(che saranno introdotti nel seguito).</p>
+<p>I documenti HTML sono <em>file </em>di testo e di solito vengono salvati con estensione <em>.html</em>. L&#39;estensione del <em>file</em> non è in genere rilevante per una corretta interpretazione del contenuto ma diversi <em>editor</em> di testo riconoscono e adattano la visualizzazione del documento partendo dall&#39;estensione. In questo modo, gli editor possono ad esempio visualizzare i tag con un colore diverso rispetto al testo da annotare, indentare in modo appropriato i <em>tag  </em>e suggerire quale <em>tag </em>è il prossimo da chiudere, facilitando così la preparazione dei documenti HTML.</p>
+<p>La figura 2.1 presenta lo scheletro di un annotazione HTML. L&#39;indentazione dei <em>tag</em> seguendo la struttura gerarchica (cioè, le annotazione incorporate in altre annotazioni sono spostate più a destra) non è richiesta dal linguaggio di <em>markup </em>ma facilita molto l&#39;annotazione di documenti, specialmente quando la struttura inizia a diventare un po&#39; complessa.</p>
 <h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/43714eea65f60309101d636113baa691a5e0bc83/risorse/template.html" target="_blank"><strong>risorse/template.html</strong></a></h3>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -269,7 +271,19 @@
       </google-codelab-step>
     
       <google-codelab-step label="Liste puntate e liste numerate" duration="0">
-        
+        <p>La possibilità di visualizzare liste di elementi è un aspetto importante delle pagine web. Anche se tecnicamente, si possono  fare liste mettendo in sequenza dei blocchi di <em>`&lt;div&gt;`</em> (e poi eventualmente formattarli con CSS), HTML mette a disposizione due annotazioni specifiche con una formattazione standard: le liste ordinate (e numerate) e quelle non ordinate. </p>
+<p>Le liste ordinate sono annotate con il <em>tag </em><strong>`&lt;ol&gt;..&lt;\ol&gt;` </strong>(che sta per <em>ordered list</em>) e gli elementi della lista con il <em>tag </em><strong>`&lt;li&gt;`</strong> (che sta per <em>list item</em>). Le liste ordinate vengono indentate leggermente a destra e usano i numeri arabi. Questa e altre formattazioni possono essere personalizzate usando CSS, come vedremo in seguito.</p>
+<p>Per le liste non annotate si usa il <em>tag </em><strong>`&lt;ul&gt;..&lt;\ul&gt;` </strong>(che sta per <em>unordered list</em>) e per gli elementi si usa ancora il <em>tag </em><strong>`&lt;li&gt;`</strong>. Anche le liste non ordinate sono leggermente indentate a destra e di default viene usato un cerchio pieno, ma anche questi sono parametri che possono essere modificati con CSS.</p>
+<p>È anche possibile innestare liste dentro ad altre liste, inserendole all&#39;interno delle annotazioni di un elemento <em>`&lt;li&gt;...&lt;/li&gt;`. </em></p>
+<p>La figura 8.1 illustra le varie possibilità.</p>
+<h3 is-upgraded><strong>risorse/many_lists.html</strong> </h3>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\a9081c7222e5ee43.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Figura 6.2 Uso di collegamenti ipertestuali esterni ed interni con il tag `&lt;a&gt;` </em></p>
+</td></tr>
+</table>
+
 
       </google-codelab-step>
     
