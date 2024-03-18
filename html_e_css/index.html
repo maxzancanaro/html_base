@@ -303,14 +303,14 @@
 <p>Come si vede nella figura 8.2, gli attributi <strong><em>colspan </em></strong>e <strong><em>rowspan </em></strong>possono essere usati per avere celle che si distribuiscono su più righe o su più colonne.</p>
 <h2 is-upgraded><strong>Inserimento immagini</strong></h2>
 <p>Per inserire un&#39;immagine in HTML, si usa il <em>tag self-closing </em><strong>`&lt;img&gt;` </strong>(o, <strong>`&lt;img/&gt;`</strong>). La specificazione di quale immagine visualizzare è fornita nell&#39;attributo <strong><em>src </em></strong>come nome di file o come URL.</p>
-<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/43714eea65f60309101d636113baa691a5e0bc83/risorse/template.html" target="_blank"><strong>risorse/template_fullhead.html</strong></a></h3>
-<pre><code>&lt;img src=&#34;risorse/cat.jpg&#34;/&gt;
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/image.html" target="_blank"><strong>risorse/image.html</strong></a></h3>
+<pre><code>&lt;img src=&#34;img.jpg&#34;/&gt;
 
-&lt;img src=&#34;&#34;/&gt;
+&lt;img src=&#34;http://.../img.jpg&#34;/&gt;
 
-&lt;img src=&#34;img.jpg&#34;, alt=&#34;qui c&#39;è un&#39;immagine di un gatto&#34;, title=&#34;il gatto&#34;, height=&#34;&#34;, width=&#34;&#34;/&gt;</code></pre>
-<p><em>Figura 8.3 Gestione delle immagini con il tag `&lt;img&gt;`</em></p>
-<p>(L&#39;immagine è di<a href="https://unsplash.com/@fernandosarapita?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Fernando Vega</a> su<a href="https://unsplash.com/photos/a-close-up-of-a-cat-with-a-blurry-background-9Yv9EH7eVgU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a>, distribuita con <a href="https://unsplash.com/license" target="_blank">Unsplash License</a>)</p>
+&lt;img src=&#34;img.jpg&#34;, alt=&#34;qui c&#39;è un&#39;immagine di un gatto&#34;, title=&#34;il gatto&#34;, height=&#34;xxx&#34;, width=&#34;xxx&#34;/&gt;</code></pre>
+<p><em>Figura 8.3 Template per inserire un&#39;immagine con il tag `&lt;img&gt;` (si veda l&#39;HTML per un esempio concreto)</em></p>
+<p>Il tag <em>`&lt;img&gt;` </em>permette anche l&#39;uso di altri attributi opzionali. L&#39;attributo <strong><em>alt </em></strong>è molto importante per l&#39;accessibilità in quanto è inteso fornire una descrizione testuale dell&#39;immagine per i dispositivi di lettura per le persone non vedenti. L&#39;attributo <strong><em>title </em></strong>invece è il titolo dell&#39;immagine e, per i browser dei computer desktop, viene visualizzata quando il mouse passa sopra l&#39;immagine. Infine, si possono specificare gli attributi <strong><em>width </em></strong>e<strong> height </strong>dell&#39;immagine che hanno una doppia funzione: da una parte, pre-calcolano lo spazio occupato dall&#39;immagine e la possono quindi caricare in parallelo al resto del documento (è importante per immagini molto grandi e per connessioni lente); dall&#39;altra parte, possono essere usati per ridimensionare l&#39;immagine in fase di caricamento (ma non è una tecnica computazionalmente molto efficiente).</p>
 <h2 is-upgraded><strong>Da immagini a mappe interattive</strong></h2>
 
 
