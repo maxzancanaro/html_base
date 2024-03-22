@@ -362,18 +362,20 @@
         <p>Cascading Style Sheet (CSS) è un linguaggio di specifiche per la formattazione grafica. È stato inventanto più o meno contestualmente all&#39;HTML da un collega di Tim Berners-Lee, Håkon Wium Lie,  sempre al CERN (Munro, 2024) per permettere agli autori di documenti HTML un minimo di personalizzazione nelle visualizzazioni dei documenti (Bos, 2016). È però solo nel 2016, con lo standard HTML4, che si finalizza l&#39;idea di una chiara separazione tra la definizione della struttura dei documenti (in HTML) e la specificazione delle modalità di visualizzazione o, in altre parole, lo stile (in CSS). </p>
 <p>Un concetto importante già presente nelle prima versioni di CSS è la nozione di &#34;progressività&#34; nella definizione degli stili: questi sono raggruppati in fogli (sheet) che possono essere specificati in sequenza (<em>cacading</em>) e in caso di conflito (uno stile dichiarato più volte) viene applicata solo l&#39;ultima definizione. Questa regola permette di poter prima definire parametri generali e poi concretizzarli e adattarli ad uno singolo dispositivo, semplicemente riscrivendo quando già specificato precedentemente. In questo modo, la responsabilità di come visualizzare un documento è in parte sulle spalle dell&#39;autore del documento e in parte sulle spalle del browser: nel caso del web, questa caratteristica è importante perché l&#39;autore può non essere sempre consapevole di tutte le caratteristiche dei vari dispositivi su cui il documento sarà visualizzato. </p>
 <p>A differenza di HTML, CSS non è un linguaggio di <em>markup</em>, nel senso che gli stili non vengono applicati direttamente sul testo in formato di annotazione ma è un linguaggio di specifiche che si applicano ai <em>tag</em> HTML e alle loro istanze individuali (cioè ad una specifica annotazione con un <em>tag </em>di un certo tipo all&#39;interno del documento) e a gruppi di istanze (che in CSS vengoni definiti &#34;classi&#34;).</p>
-<p>La struttura tipica delle specifiche di CSS è rappresentata in figura 10.1.  Il <em>tag </em>da definire si trova all&#39;inizio di una riga e le proprietà da modificare (sovrascrivendo i valori precedenti) vengono messe all&#39;interno di parentesi graffe `<strong>{...}`</strong>. Ogni <em>tag </em>ha un insieme predefinito di proprietà (le principali sono descritte nel seguito). Ogni proprietà che si vuole modificare viene elencata separatamente seguita dal nuovo valore della proprietà (anche l&#39;insieme dei valori per ogni proprietà è definito a priori). Le coppie proprietà (<em>property</em>) e valore (<em>value</em>) sono separate dal carattere ‘:&#39; e terminate dal carattere ‘;&#39;.</p>
+<p>La struttura tipica delle specifiche di CSS è rappresentata in figura 10.1.  Il <em>tag </em>da definire si trova all&#39;inizio di una riga e le proprietà da modificare (sovrascrivendo i valori precedenti) vengono messe all&#39;interno di parentesi graffe `<strong>{...}`</strong>. Ogni <em>tag </em>ha un insieme predefinito di proprietà (le principali sono descritte nel seguito). Ogni proprietà che si vuole modificare viene elencata separatamente seguita dal nuovo valore della proprietà (anche l&#39;insieme dei valori per ogni proprietà è definito a priori). Le coppie proprietà (<em>property</em>) e valore (<em>value</em>) sono separate dal carattere ‘:&#39; e terminate dal carattere ‘;&#39;. </p>
 <table>
 <tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\2e64535a04c4a103.png"></p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p><em>Figura 10.1 Schema di base della specificazione di un tag in CSS </em></p>
 </td></tr>
 </table>
+<p>Se a più <em>tag</em> si vogliono applicare gli stessi stili, si possono separare da virgole: <code>`h1, h2, h3 { font-family: sans-serif }`</code>.</p>
 <p>Gli stili possono essere collegati ad un documento HTML in tre diversi modi: <em>inline</em>, <em>internal</em> e <em>external. </em></p>
 <p><strong>Inline styles</strong>: sono specifiche di stile applicate direttamente nel <em>tag </em>tramite l&#39;attributo <strong><em>style </em></strong>(nota: la sintassi è quella della figura 10.1 ma senza la menzione al <em>tag</em> né le parentesi graffe). Lo stile si applica all&#39;istanza del <em>tag </em>in cui lo stile è riportato (e non a tutti i <em>tag </em>dello stesso tipo). Un esempio in figura 10.2, in questo caso la porzione di testo &#34;Hello World!&#34; sarà scritta in colore rosso e avrà una dimensione di 24 pixel, il resto delle proprietà le prenderà dagli stili del titolo di primo livello, le altre porzioni di testo annotate con questo <em>tag</em> useranno, se non ulteriormente specificato, le proprietà di default del colore e della grandezza.</p>
 <pre><code>&lt;h1 style=&#34;color: red; font-size: 24px;&#34;&gt;Hello, World!&lt;/h1&gt;                </code></pre>
 <p><em>Figura 10.1  Esempio di uso di inline styles</em></p>
-<p><strong>Internal styles</strong>: le specifiche di stile sono incluse tra i <em>tag </em><strong>`&lt;style&gt; ...&lt;/style&gt;` </strong>nella sezione <em>head</em>. In questo caso, gli stili di definiti per un <em>tag </em>vengono applicate per tutti i <em>tag </em>di quel tipo nel documento (tranne se sono sovrascritte come <em>inline style</em>). Si veda figura 10.2.</p>
+<p><strong>Internal styles</strong>: le specifiche di stile sono incluse tra i<em> tag </em></p>
+<p><strong><em>`&lt;style&gt; ...&lt;/style&gt;` </em></strong>nella sezione <em>head</em>. In questo caso, gli stili di definiti per un <em>tag </em>vengono applicate per tutti i <em>tag </em>di quel tipo nel documento (tranne se sono sovrascritte come <em>inline style</em>). Si veda figura 10.2.</p>
 <pre><code>&lt;head&gt;
 ...
 &lt;style&gt;
@@ -414,7 +416,38 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Uso dei selettori in CSS" duration="0">
+      <google-codelab-step label="Uso dei selettori" duration="0">
+        <p>In CSS, un selettore è uno schema che permette di identificare l&#39;elemento (o gli elementi) all&#39;interno di un documento HTML a cui applicare una regola di stile. </p>
+<p>I selettori sono di vari tipi, i principali, descritti qui sotto sono i seguenti: <strong>element selector</strong>, <strong>universal selector</strong>, <strong>class selector</strong>, <strong>ID selector</strong>, <strong>attribute selector</strong>, <strong>descendant selector</strong>, <strong>child selector</strong>, <strong>adjacent sibling selector</strong>, <strong>pseudo-classes</strong> e <strong>pseudo-elements selector</strong>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Elementi di base" duration="0">
+        <ul>
+<li>CSS units: pixels (px), percentages (%), ems (em), rems (rem), viewport width/height (vw/vh), and more</li>
+<li>Typography: properties for controlling text styling, including font-family, font-size, font-weight, font-style, line-height, text-align, text-decoration, and color.</li>
+<li>Colors and Backgrounds: Cover properties for defining colors (color, background-color) and background styles (background-image, background-repeat, background-position, background-size)</li>
+<li>Box Model: how elements are rendered as rectangular boxes with content, padding, borders, and margins. Teach how to control the dimensions and spacing of elements using properties like width, height, padding, margin, and border</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Impaginazione e  Responsive Design" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Transitions and Animations" duration="0">
+        <ul>
+<li>properties like transition, animation, keyframes, and timing functions (ease, ease-in, ease-out, ease-in-out)</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Introduzione al DOM e all&#39;uso di Javascript" duration="0">
         
 
       </google-codelab-step>
