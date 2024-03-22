@@ -249,7 +249,7 @@
 </td></tr>
 </table>
 <p>A differenza di altri linguaggi per definire ipertesti, HTML è stato tenuto volutamente molto semplice. L&#39;unico modo per definire strutture ipertestuali è usare il <em>tag </em>è <strong>`&lt;a&gt; ...&lt;/a&gt;` </strong>che sta per <em>anchor</em>, ossia la porzione di testo a cui si connette (o, appunto, si &#34;àncora&#34;) il collegamento (<em>link</em>). I collegamenti possono essere esterni (ad altri documenti o pagine) oppure  interni verso altre porzioni dello stesso documento. </p>
-<p>La destinazione del collegamento viene specificata con l&#39;attributo <em>href</em>.  Se il valore di questo attributo è un nome di un file, questo viene aperto, se invece è un URL viene caricato via internet. Per fare un collegamento interno, viene invece indicato un codice identificativo prefisso dal carattere #. Lo stesso codice deve essere poi indicato in un qualunque <em>tag </em>dello stesso documento usando l&#39;attributo <em>id</em>.</p>
+<p>La destinazione del collegamento viene specificata con l&#39;attributo <strong><em>href</em></strong>.  Se il valore di questo attributo è un nome di un file, questo viene aperto, se invece è un URL viene caricato via internet. Per fare un collegamento interno, viene invece indicato un codice identificativo prefisso dal carattere #. Lo stesso codice deve essere poi indicato in un <em>tag </em>dello stesso documento usando l&#39;attributo <em>id</em>: quando si clicca su l&#39;ancora, la visualizzazione del documento scorre fino a rendere visibile il<em> tag</em> a cui è stato assegnato l&#39;<em>id.</em></p>
 <h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/hypertext_01.html" target="_blank"><strong>risorse/hypertext_01.html</strong></a> <a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/hypertext_02.html" target="_blank"><strong>risorse/hypertext_02.html</strong></a></h3>
 <table>
 <tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 587.00px" src="img\\f6bf1036646e8157.png"></p>
@@ -257,6 +257,8 @@
 <tr><td colspan="1" rowspan="1"><p><em>Figura 6.2 Uso di collegamenti ipertestuali esterni ed interni con il tag `&lt;a&gt;` </em></p>
 </td></tr>
 </table>
+<p>Un attributo importante per il tag `&lt;a&gt;` è <strong><em>target </em></strong>che specifica come aprire il nuovo documento ipertestuale: i principali valori sono: <em>_self </em>(il valore predefinito) che apre il documento nella stessa finestra del browser del documento di partenza, <em>_blank </em>lo apre in un&#39;altra finestra o tab del browser; le opzioni <em>_top</em> e <em>_parent </em>sono di solito simili a <em>_blank</em> tranne quando si usano i <em>frame </em>che non vengono però trattati in questo manuale in quanto danno problemi di usabilità e di sicurezza (e sono infatti &#34;deprecati&#34; in HTML5). </p>
+<p>Il tag `&lt;a&gt;` permette anche l&#39;uso dell&#39;attributo <strong><em>title </em></strong>che viene in generale visualizzato come tooltip di aiuto ma può anche essere utile per migliorare l&#39;accessibilità del documento.</p>
 
 
       </google-codelab-step>
@@ -384,7 +386,7 @@
 <p><em>Figura 10.2  Esempio di uso di internal styles</em></p>
 <p><strong>External styles: </strong>sono definiti in un file esterno (di solito con estensione <em>.css</em>) e vengono caricati nel documento HTML usando il <em>tag self-closing </em><strong>`&lt;link&gt;` </strong>l&#39;URL del file nell&#39;attributo <strong><em>href </em></strong>(come per le àncore nel tag `&lt;a&gt;` e `&lt;area&gt;`) e che si tratta di un link ad un CSS nell&#39;attributo <strong><em>rel</em></strong></p>
 <p><strong>.</strong> Si veda la figura 10.3. </p>
-<h3 is-upgraded><strong>risorse/external_styles_esempio.html</strong> </h3>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/external_styles_esempio.html" target="_blank"><strong>risorse/external_styles_esempio.html</strong></a> </h3>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -394,16 +396,26 @@
 &lt;/head&gt;</code></pre>
 <p><em>Figura 10.3  Esempio di uso di internal styles</em></p>
 <p>In riferimento alla figura 10.3, il file &#34;styles.css&#34; (che in questo caso dovrà trovarsi nella stessa directory del file html), avrà lo stesso formato introdotto sopra per specificare gli stili ai <em>tag </em>(ma senza essere i <em>tag </em>`&lt;style&gt; ... &lt;/style&gt;`. Si veda figura 10.4 e relativi file di esempi.</p>
-<h3 is-upgraded><strong>risorse/external_styles_esempio.html</strong></h3>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-   ...
-   &lt;link rel=&#34;stylesheet&#34; href=&#34;styles.css&#34;&gt;
-  ...
-&lt;/head&gt;</code></pre>
-<p><em>Figura 10.3  Esempio di uso di internal styles</em></p>
+<h3 is-upgraded><a href="https://github.com/maxzancanaro/html_base/blob/main/risorse/external_styles_esempio.css" target="_blank"><strong>risorse/external_styles_esempio.css</strong></a></h3>
+<pre><code>h1 {
+  color: red;
+  font-size: 24px;
+}</code></pre>
+<p><em>Figura 10.3  Esempio di file CSS da inserire come link in documenti HTML</em></p>
+<h2 is-upgraded><strong>Cascading: le regole di priorità nella specificazione degli stili</strong></h2>
+<p>Il termine <em>cascading </em>(che si potrebbe tradurre come &#34;a cascata&#34;) si riferisce alla natura gerarchica del processo di applicazione delle regole di stile. </p>
+<p>La gerarchia delle priorità funziona con tre principi: </p>
+<ul>
+<li><strong>specificità: </strong>le regole più specifiche hanno sempre la precedenza su quelle più generiche: la specificità è fortemente influenzata dall&#39;uso dei selettori che saranno trattati nel prossimo capitolo;</li>
+<li><strong>ordine di apparizione: </strong>a parità di specificità, le regole definite (o caricate) dopo hanno priorità più alta di quelle precedenti: quindi gli stili <em>inline</em> in genere hanno più priorità di quelli <em>internal </em>e di quelli <em>external</em> mentre tra quest&#39;ultimi, l&#39;ordine in cui si posizionano i tag <em>`&lt;link&gt;` </em>e <em>`&lt;style&gt;`</em> nella sezione <em>head</em> è significativa.</li>
+<li><strong>ereditarietà</strong>: le proprietà CSS hanno valori predefiniti che sono usati quando non ci sono regole che li modificano esplicitamente.</li>
+</ul>
 
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Uso dei selettori in CSS" duration="0">
+        
 
       </google-codelab-step>
     
