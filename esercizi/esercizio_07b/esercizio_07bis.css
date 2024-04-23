@@ -7,8 +7,8 @@ main {
 }
 
 nav {
-	grid-column: 1;
 	grid-row: 1;
+	grid-column: 1;
 	padding: 10px;
 }
 
@@ -20,6 +20,8 @@ section {
 	align-items: flex-start;
 	align-content: flex-start;
 	padding: 5px;
+	grid-row: 1;
+	grid-column: 2;
 }
 
 article {
@@ -34,6 +36,6 @@ article {
 
 footer {
 	grid-row: 2;
-	grid-column: span 2;
+	grid-column: 1 / span 2;
 	padding: 10px;
 }
