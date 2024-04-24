@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test Javascript 01</title>
+
+    <script>
+      function localizza() {
+        var e = document.getElementById("interno_1").textContent;
+        alert("Il contenuto dell'elemento è "+e);
+      }
+    </script>
+
+</head>
+<body>
+  
+  <div id="contenitore">
+    <div id="interno_1">Lorem ipsum dolor 1</div>
+    <div id="interno_2">Lorem ipsum dolor 2</div>
+  </div>
+  
+  <div>
+  <a href="#" onClick="localizza()">Clicca qui</a>
+  </div>
+
+</html>

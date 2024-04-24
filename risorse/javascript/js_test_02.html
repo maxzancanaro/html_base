@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test Javascript 02</title>
+
+    <script>
+    function localizza() {
+	var e = document.getElementsByClassName("interno");
+	
+	var s="";
+	for (var i = 0; i < e.length; i++) {
+    s += e[i].id+"; ";
+	}
+	
+	alert("Gli id degli elementi sono "+s);
+}
+</script>
+
+</head>
+<body>
+  
+<div id="contenitore">
+	<div id="interno_1" class="interno">Lorem ipsum dolor 1</div>
+	<div id="interno_2" class="interno">Lorem ipsum dolor 2</div>
+	<div id="interno_3" class="interno">Lorem ipsum dolor 3</div>
+	<div id="interno_4" class="interno">Lorem ipsum dolor 4</div>
+</div>
+
+<div>
+<a href="#" onClick="localizza()">Clicca qui</a>
+</div>
+
+</body>
+</html>
