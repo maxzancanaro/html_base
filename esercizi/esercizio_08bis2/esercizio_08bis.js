@@ -1,9 +1,8 @@
-let contatore=0;
 
 function incr() {
     let element = document.getElementById("contatore");
 
-    contatore++;
+    let contatore=parseInt(element.textContent)+1;
     
     if ( contatore >= 0 ) {
         element.style.color = "#000000";
@@ -15,7 +14,7 @@ function incr() {
 function decr() {
     let element = document.getElementById("contatore");
 
-    contatore--;
+    let contatore=parseInt(element.textContent)-1;
 
     if ( contatore < 0 ) {
         element.style.color = "#ff0000";
@@ -29,7 +28,7 @@ function decr() {
 function cancella() {
     let element = document.getElementById("contatore");
 
-    contatore=0;
+    let contatore=0;
 
     element.style.color = "#000000";
 
