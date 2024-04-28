@@ -1,4 +1,5 @@
 
+
 function incr() {
     let element = document.getElementById("contatore");
 
@@ -34,4 +35,5 @@ function cancella() {
 
     element.textContent = contatore;
 };
+
 
