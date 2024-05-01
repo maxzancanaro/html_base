@@ -14,7 +14,8 @@ window.addEventListener("load", (event) => {
         });
     }
 
-    for (let element of document.getElementsByClassName("operazione")) {
+    let elementoOperazioni=document.getElementById("operazioni")
+    for (let element of elementoOperazioni.children) {
         console.log(element)
         element.addEventListener("click",(event) => {
             switch (event.target.id) {

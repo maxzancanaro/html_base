@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.2/math.js" ></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script src="esercizio_10.js"></script>
@@ -12,33 +13,34 @@
 </head>
 <body>
 
-<div id="contenitore">
+<div id="contenitore" class="flex flex-col flex-nowrap justify-center items-center my-8 mx-auto p-4 w-4/5 font-sans text-3xl text-center bg-white rounded-3xl shadow-md">
 
-    <div id="risultato">&nbsp</div>
+    <div id="risultato" class="w-11/12 p-4 h-16 text-right bg-slate-100 rounded-2xl">&nbsp;</div>
 
-    <div id="contenitoreConsole">
-        <div id="numeri">
-            <div id="n0" class="numero">0</div>
-            <div id="n1" class="numero">1</div>
-            <div id="n2" class="numero">2</div>
-            <div id="n3" class="numero">3</div>
-            <div id="n4" class="numero">4</div>
-            <div id="n5" class="numero">5</div>
-            <div id="n6" class="numero">6</div>
-            <div id="n7" class="numero">7</div>
-            <div id="n8" class="numero">8</div>
-            <div id="n9" class="numero">9</div>
-        </div>
-        <div id="operazioni">
-            <div id="operazioneSomma" class="operazione">+</div>
-            <div id="operazioneSottrazione" class="operazione">-</div>
-            <div id="operazioneDivisione" class="operazione">/</div>
-            <div id="operazioneProdotto" class="operazione">*</div>
-            <div id="cancellazione" class="operazione">C</dic>
+    <div id="contenitoreConsole" class="flex flex-col flex-nowrap justify-center items-center my-10 w-11/12 bg-slate-100 rounded-2xl"> 
+        <div id="numeri" class="my-4 flex flex-row justify-center items-start flex-wrap">
+            <div id="n1" class="mx-4 my-1 w-12 p-4 bg-zinc-200 rounded-2xl drop-shadow hover:drop-shadow-md active:drop-shadow-none cursor-pointer">1</div>
+            <div id="n2" class="mx-4 my-1 w-12 p-4 bg-zinc-200 rounded-2xl drop-shadow hover:drop-shadow-md active:drop-shadow-none cursor-pointer">2</div>
+            <div id="n3" class="mx-4 my-1 w-12 p-4 bg-zinc-200 rounded-2xl drop-shadow hover:drop-shadow-md active:drop-shadow-none cursor-pointer">3</div>
+            <div id="n4" class="mx-4 my-1 w-12 p-4 bg-zinc-200 rounded-2xl drop-shadow hover:drop-shadow-md active:drop-shadow-none cursor-pointer">4</div>
+            <div id="n5" class="mx-4 my-1 w-12 p-4 bg-zinc-200 rounded-2xl drop-shadow hover:drop-shadow-md active:drop-shadow-none cursor-pointer">5</div>
+            <div id="n6" class="mx-4 my-1 w-12 p-4 bg-zinc-200 rounded-2xl drop-shadow hover:drop-shadow-md active:drop-shadow-none cursor-pointer">6</div>
+            <div id="n7" class="mx-4 my-1 w-12 p-4 bg-zinc-200 rounded-2xl drop-shadow hover:drop-shadow-md active:drop-shadow-none cursor-pointer">7</div>
+            <div id="n8" class="mx-4 my-1 w-12 p-4 bg-zinc-200 rounded-2xl drop-shadow hover:drop-shadow-md active:drop-shadow-none cursor-pointer">8</div>
+            <div id="n9" class="mx-4 my-1 w-12 p-4 bg-zinc-200 rounded-2xl drop-shadow hover:drop-shadow-md active:drop-shadow-none cursor-pointer">9</div>
+            <div id="n0" class="mx-4 my-1 w-12 p-4 bg-zinc-200 rounded-2xl drop-shadow hover:drop-shadow-md active:drop-shadow-none cursor-pointer">0</div>
         </div>
 
-        <div id="uguale">=</div>
-        
+        <div id="operazioni" class="my-4 flex flex-row flex-wrap justify-center items-start">
+            <div id="operazioneSomma" class="mx-4 my-1 w-12 p-4 bg-amber-500 rounded-2xl cursor-pointer drop-shadow hover:drop-shadow-md active:drop-shadow-none">+</div>
+            <div id="operazioneSottrazione" class="mx-4 my-1 w-12 p-4 bg-amber-500 rounded-2xl cursor-pointer drop-shadow hover:drop-shadow-md active:drop-shadow-none">-</div>
+            <div id="operazioneDivisione" class="mx-4 my-1 w-12 p-4 bg-amber-500 rounded-2xl cursor-pointer drop-shadow hover:drop-shadow-md active:drop-shadow-none">/</div>
+            <div id="operazioneProdotto" class="mx-4 my-1 w-12 p-4 bg-amber-500 rounded-2xl cursor-pointer drop-shadow hover:drop-shadow-md active:drop-shadow-none">*</div>
+            <div id="cancellazione" class="mx-4 my-1 w-12 p-4 bg-amber-500 rounded-2xl cursor-pointer drop-shadow hover:drop-shadow-md active:drop-shadow-none">C</div>
+        </div>
+
+        <div id="uguale" class="my-4 w-36 p-4 bg-amber-500 rounded-2xl drop-shadow hover:drop-shadow-md active:drop-shadow-none cursor-pointer">=</div>
+    </div>
 </div>
 
 </body>
