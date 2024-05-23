@@ -1,7 +1,7 @@
 
 #main {
     display: grid;
-    grid-template-rows: 10% auto 20%;
+    grid-template-rows: 10% auto 15%;
     justify-content: space-evenly;
     align-items: stretch;
     width: 60vw;
@@ -51,7 +51,7 @@
 }
 
 #consoleRisultato {
-    height: 20%;
+    
     padding: 1em;
     text-align: center;
     font-family: sans-serif;
