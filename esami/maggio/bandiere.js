@@ -56,8 +56,8 @@ addEventListener("load", (event) => {
             
             document.getElementById("bandierImmagine").setAttribute("src",cercaStatoSafe(statiEbandiere,stato));
             
-            // alternativa meno elegante
-            document.getElementById("bandieraConsole").innerHTML='<img id="bandierImmagine" src="'+cercaStatoSafe(statiEbandiere,stato)+'" width="300">'
+            /* alternativa meno elegante */
+            //document.getElementById("bandieraConsole").innerHTML='<img id="bandierImmagine" src="'+cercaStatoSafe(statiEbandiere,stato)+'" width="300">'
             
         });
     }
