@@ -1,4 +1,4 @@
-// True if string contains any letter in array
+
 function lettersInString(targetString, lettersArray) {
 
     let result = false;
@@ -12,7 +12,6 @@ function lettersInString(targetString, lettersArray) {
     return(result);
 }
 
-// function that returns string without letters in array
 function removeLetters(targetString, lettersArray) {
 
     let outString = '';
@@ -27,7 +26,9 @@ function removeLetters(targetString, lettersArray) {
     return(outString);
 }
 
-// function that returns string without-with letters in array
+console.log(removeLetters('ciao', ['a', 'e', 'i']));
+
+
 function splitLetters(targetString, lettersArray) {
 
     let outStringTarget = '';
@@ -35,7 +36,7 @@ function splitLetters(targetString, lettersArray) {
     
     for (let letterIn of targetString){
 
-        if (lettersInString(letterIn, lettersArray)){
+        if (lettersInString(letterIn, lettersArray) == true){
             outStringTarget = outStringTarget + letterIn
         } else {
             outStringNonTarget = outStringNonTarget + letterIn
@@ -45,4 +46,4 @@ function splitLetters(targetString, lettersArray) {
     return(outStringNonTarget+'-'+outStringTarget);
 }
 
-console.log(splitLetters('aaaaaabcdefghilmnopqrstuvz', ['a', 'e', 'i', 'o', 'u']));
+console.log(splitLetters('ciao', ['a', 'e', 'i']));
